@@ -1,3 +1,6 @@
-<p>Hello</p>
-
-<button (click)="openCheckout()">Purchase</button>
+<label for="amountInput">Please, enter amount to purchase: </label>
+<input id="amountInput" type="number" [formControl]="amountControl">
+<button [disabled]="!amountControl.value"
+        (click)="openCheckout()">
+  Purchase
+</button>
